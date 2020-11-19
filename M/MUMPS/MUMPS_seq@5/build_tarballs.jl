@@ -1,11 +1,11 @@
 using BinaryBuilder
 
 name = "MUMPS_seq"
-version = v"5.2.1"
+version = v"5.3.4"
 
 sources = [
   ArchiveSource("http://mumps.enseeiht.fr/MUMPS_$version.tar.gz",
-                "d988fc34dfc8f5eee0533e361052a972aa69cc39ab193e7f987178d24981744a"),
+                "28ab16bf4cf9e4ff67f2d987941c1b6b584dd0efa5a3ba7d3bc7f1a75bdc6f7d"),
 ]
 
 # Bash recipe for building across all platforms
