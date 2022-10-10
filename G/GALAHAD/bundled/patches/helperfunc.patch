@@ -1,0 +1,22 @@
+From 259a0ffe2c81b94eb5c7445b568c5b1e7782fc06 Mon Sep 17 00:00:00 2001
+From: Dominique Orban <dominique.orban@gmail.com>
+Date: Sun, 9 Oct 2022 12:10:34 -0400
+Subject: [PATCH] use echo instead of error if ARCHDEFS is not set
+
+---
+ bin/install_optrove | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/bin/install_optrove b/bin/install_optrove
+index ec90b7f..584e7ee 100755
+--- a/bin/install_optrove
++++ b/bin/install_optrove
+@@ -55,7 +55,7 @@ let install_archdefs=0
+ if (( $install_archdefs )) ; then
+   if [[ -z "$ARCHDEFS" || ! -f "$ARCHDEFS/version" ]]; then
+     if [[ ! -d "$PWD/../archdefs" || ! -f "$PWD/../archdefs/version" ]]; then
+-      error 'environment variable ARCHDEFS is not set, nor does the
++      echo 'environment variable ARCHDEFS is not set, nor does the
+  directory ../archdefs exist. Install the ARCHDefs package, set
+  the variable $ARCHDEFS to the archdefs directory and re-run.'
+       exit 1

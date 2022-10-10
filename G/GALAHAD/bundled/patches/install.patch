@@ -1,0 +1,22 @@
+From 9701fb6bcc54178833a35cd377db0efacacdf50f Mon Sep 17 00:00:00 2001
+From: Dominique <dominique.orban@gmail.com>
+Date: Fri, 7 Oct 2022 17:55:34 -0400
+Subject: [PATCH] Fix error in install script
+
+---
+ bin/install_galahad_main | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/bin/install_galahad_main b/bin/install_galahad_main
+index bff004a4..233cb7a8 100755
+--- a/bin/install_galahad_main
++++ b/bin/install_galahad_main
+@@ -420,7 +420,7 @@ fi
+ #  $MKDIR $GALAHAD/specs
+ #fi
+ 
+-if (( $PYTHON_REQUIRED == 1 )); then
++if [[ "$PYTHON_REQUIRED" == "1" ]]; then
+   if [[ -e $PYSITEPACKDIR ]]; then
+     if [[ ! -e $PYSITEPACKDIR/galahad ]]; then
+       $MKDIR $PYSITEPACKDIR/galahad
